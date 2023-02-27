@@ -19,6 +19,10 @@
 }
 
 .nav {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
   padding: 24px 60px;
   display: flex;
   justify-content: space-between;
@@ -40,10 +44,12 @@
   padding: 22px 54px;
   border-radius: 24px;
   background: #5CCD6A;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 24px;
   font-family: "Ruberoid";
   color: white;
+  text-transform: uppercase;
+  transition: 0.3s ease;
 }
 .nav__btn-outer {
   display: flex;
@@ -53,17 +59,30 @@
   padding: 10px;
   border-radius: 30px;
 }
+.nav__btn:hover {
+  background: #54E165;
+}
+
+header {
+  background: linear-gradient(180deg, rgb(245, 245, 245) 0%, rgb(225, 228, 227) 100%);
+  position: relative;
+}
+header .nav__btn-outer {
+  background: rgba(255, 255, 255, 0.45);
+}
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 200px 0 80px;
 }
 .header__part {
   width: 50%;
 }
 .header__title {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 .header__title h2 {
   font-size: 72px;
@@ -89,16 +108,75 @@
   background: #78C081;
   width: 180px;
 }
-.header__dots {
+.header__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+.header__info-dots {
+  margin-top: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
-.header__dot {
+.header__info-dot {
   width: 12px;
   height: 12px;
   border: 2px solid #78C081;
   border-radius: 100%;
+}
+.header__info-text {
+  font-size: 24px;
+  line-height: 34px;
+  font-family: "Ruberoid";
+  color: #7CA381;
+}
+.header__contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 80px;
+  margin-bottom: 72px;
+}
+.header__contact-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+.header__contact-item-text {
+  font-size: 18px;
+  line-height: 27px;
+  font-family: "Ruberoid";
+  color: #495E4C;
+}
+.header__btn {
+  padding: 32px 140px;
+  border-radius: 24px;
+  background: #5CCD6A;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Ruberoid";
+  color: white;
+  text-transform: uppercase;
+}
+.header__btn-outer {
+  width: 434px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(120, 192, 129, 0.25);
+  padding: 15px;
+  border-radius: 30px;
+}
+.header__image {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

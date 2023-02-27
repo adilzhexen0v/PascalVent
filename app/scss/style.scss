@@ -33,6 +33,10 @@
 }
 
 .nav{
+     position: absolute;
+     top: 0;
+     z-index: 2;
+     width: 100%;
      padding: 24px 60px;
      @include flex();
      &__part{
@@ -48,23 +52,38 @@
           padding: 22px 54px;
           border-radius: 24px;
           background: $lightGreen;
-          @include text(18px, 24px, $ruberoid, white);
+          @include text(17px, 24px, $ruberoid, white);
+          text-transform: uppercase;
+          transition: 0.3s ease;
           &-outer{
                @include flex(center, center);
                background: rgba($green, 0.25);
                padding: 10px;
                border-radius: 30px;
           }
+          &:hover{
+               background: $hoverGreen;
+          }
+     }
+}
+
+header{
+     background: $headerGradient;
+     position: relative;
+     .nav__btn-outer{
+          background: rgba(white, 0.45);
      }
 }
 
 .header{
+     position: relative;
      @include flex();
+     padding: 200px 0 80px;
      &__part{
           width: 50%;
      }
      &__title{
-          margin-bottom: 24px;
+          margin-bottom: 36px;
           h2{
                @include text(72px, 84px, $ruberoid, $darkenGray);
           }
@@ -83,14 +102,56 @@
                }
           }
      }
-     &__dots{
-          @include flex(flex-start, center);
+     &__info {
+          @include flex(flex-start, flex-start);
           gap: 12px;
+          margin-bottom: 60px;
+          &-dots{
+               margin-top: 10px;
+               @include flex(flex-start, center);
+               gap: 16px;
+          }
+          &-dot{
+               width: 12px;
+               height: 12px;
+               border: 2px solid $green;
+               border-radius: 100%;
+          }
+          &-text{
+               @include text(24px, 34px, $proxima, $darkenGreen);
+          }
      }
-     &__dot{
-          width: 12px;
-          height: 12px;
-          border: 2px solid $green;
-          border-radius: 100%;
+     &__contact{
+          @include flex(flex-start, flex-start);
+          gap: 80px;
+          margin-bottom: 72px;
+          &-item{
+               @include flex(flex-start, center);
+               gap: 24px;
+               &-text{
+                    @include text(18px, 27px, $proxima, $darkenGray);
+               }
+          }
+     }
+     &__btn{
+          padding: 32px 140px;
+          border-radius: 24px;
+          background: $lightGreen;
+          @include text(18px, 24px, $ruberoid, white);
+          text-transform: uppercase;
+          &-outer{
+               width: 434px;
+               @include flex(center, center);
+               background: rgba($green, 0.25);
+               padding: 15px;
+               border-radius: 30px;
+          }
+     }
+     &__image{
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
      }
 }
