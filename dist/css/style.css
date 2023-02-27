@@ -1,0 +1,104 @@
+@import "./reset.css";
+@font-face {
+  font-family: "Ruberoid";
+  src: url("../../app/fonts/Ruberoid/Ruberoid-Regular.eot");
+  src: local("Ruberoid"), local("Ruberoid-Regular"), url("../../app/fonts/Ruberoid/Ruberoid-Regular.eot?#iefix") format("embedded-opentype"), url("../../app/fonts/Ruberoid/Ruberoid-Regular.woff2") format("woff2"), url("../../app/fonts/Ruberoid/Ruberoid-Regular.woff") format("woff"), url("../../app/fonts/Ruberoid/Ruberoid-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../../app/fonts/Proxima Nova/");
+  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"), url("../../app/fonts/Proxima Nova/?#iefix") format("embedded-opentype"), url("../../app/fonts/Proxima Nova/ProximaNova-Regular.woff2") format("woff2"), url("../../app/fonts/Proxima Nova/ProximaNova-Regular.woff") format("woff"), url("../../app/fonts/Proxima Nova/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.nav {
+  padding: 24px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__part:nth-child(2) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 48px;
+}
+.nav__link {
+  font-size: 17px;
+  line-height: 22px;
+  font-family: "Ruberoid";
+  color: #495E4C;
+}
+.nav__btn {
+  padding: 22px 54px;
+  border-radius: 24px;
+  background: #5CCD6A;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Ruberoid";
+  color: white;
+}
+.nav__btn-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(120, 192, 129, 0.25);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__part {
+  width: 50%;
+}
+.header__title {
+  margin-bottom: 24px;
+}
+.header__title h2 {
+  font-size: 72px;
+  line-height: 84px;
+  font-family: "Ruberoid";
+  color: #495E4C;
+}
+.header__title h1 {
+  font-size: 75px;
+  line-height: 84px;
+  font-family: "Ruberoid";
+  color: #78C081;
+  text-transform: uppercase;
+}
+.header__title-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 42px;
+}
+.header__title-line span {
+  height: 4px;
+  background: #78C081;
+  width: 180px;
+}
+.header__dots {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+.header__dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #78C081;
+  border-radius: 100%;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,96 @@
+@import "static/variables";
+@import "static/mixins";
+@import "./reset.css";
+
+
+@font-face {
+     font-family: 'Ruberoid';
+     src: url('../../app/fonts/Ruberoid/Ruberoid-Regular.eot');
+     src: local('Ruberoid'), local('Ruberoid-Regular'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Regular.woff2') format('woff2'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Regular.woff') format('woff'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Regular.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+}
+
+@font-face {
+     font-family: 'Proxima Nova';
+     src: url('../../app/fonts/Proxima Nova/');
+     src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+         url('../../app/fonts/Proxima Nova/?#iefix') format('embedded-opentype'),
+         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.woff2') format('woff2'),
+         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.woff') format('woff'),
+         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+}
+
+.container{
+     width: 1440px;
+     margin: 0 auto;
+}
+
+.nav{
+     padding: 24px 60px;
+     @include flex();
+     &__part{
+          &:nth-child(2) {
+               @include flex(flex-start, center);
+               gap: 48px;
+          }
+     }
+     &__link{
+          @include text(17px, 22px, $proxima, $darkenGray);
+     }
+     &__btn{
+          padding: 22px 54px;
+          border-radius: 24px;
+          background: $lightGreen;
+          @include text(18px, 24px, $ruberoid, white);
+          &-outer{
+               @include flex(center, center);
+               background: rgba($green, 0.25);
+               padding: 10px;
+               border-radius: 30px;
+          }
+     }
+}
+
+.header{
+     @include flex();
+     &__part{
+          width: 50%;
+     }
+     &__title{
+          margin-bottom: 24px;
+          h2{
+               @include text(72px, 84px, $ruberoid, $darkenGray);
+          }
+          h1{
+               @include text(75px, 84px, $ruberoid, $green);
+               text-transform: uppercase;
+          }
+          &-line{
+               @include flex(flex-start, center);
+               gap: 42px;
+               span{
+                    height: 4px;
+                    background: $green;
+                    width: 180px;
+                    
+               }
+          }
+     }
+     &__dots{
+          @include flex(flex-start, center);
+          gap: 12px;
+     }
+     &__dot{
+          width: 12px;
+          height: 12px;
+          border: 2px solid $green;
+          border-radius: 100%;
+     }
+}
