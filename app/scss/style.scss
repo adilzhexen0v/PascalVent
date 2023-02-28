@@ -53,21 +53,24 @@ section{
 
 .section{
      &__title{
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
+          width: auto;
+          display: inline-block;
           &-line{
+               width: 100%;
                @include flex();
                gap: 40px;
                span{
-                    width: 100%;
-                    height: 2px;
+                    flex: 1;
+                    height: 4px;
                     background: $green;
                }
           }
           h2{
+               text-transform: capitalize;
                @include text(50px, 64px, $ruberoidMedium, $darkenGray);
+               &:first-child{
+                    margin-bottom: 12px;
+               }
           }
      }
 }
@@ -197,7 +200,9 @@ header{
 }
 
 .services{
-     @include flex();
+     &__list{
+          @include flex();
+     }
      &__part{
           &:first-child{
                width: 30%;
@@ -288,5 +293,50 @@ header{
                     box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
                }
           }
+     }
+}
+
+.products{
+     position: relative;
+     &__grid{
+          margin-top: 85px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 54px 40px;
+     }
+     &__item{
+          border-radius: 30px;
+          box-shadow: 0px 2px 4px rgba(46, 35, 25, 0.3);
+          background: white;
+          &-img{
+               position: relative;
+               img{
+                    border-radius: 25px 25px 0 0; 
+               }
+               &-price{
+                    display: inline-block;
+                    top: 20px;
+                    left: 0;
+                    position: absolute;
+                    padding: 5px 15px;
+                    background: $bgGreen;
+                    border-radius: 0 10px 10px 0;
+                    @include text(15px, 18px, $ruberoidMedium, $darkenGray);
+               }
+          }
+          &-title{
+               padding: 14px 18px;
+               border-radius: 0 0 25px 25px; 
+               h4{
+                    @include text(18px, 24px, $ruberoid, $green);
+               }
+          }
+     }
+     &__bg-image{
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 180px;
+          z-index: -1;
      }
 }
