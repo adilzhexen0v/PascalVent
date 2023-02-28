@@ -16,13 +16,25 @@
 }
 
 @font-face {
+     font-family: 'Ruberoid Medium';
+     src: url('../../app/fonts/Ruberoid/Ruberoid-Medium.eot');
+     src: local('Ruberoid Medium'), local('Ruberoid-Medium'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Medium.woff2') format('woff2'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Medium.woff') format('woff'),
+         url('../../app/fonts/Ruberoid/Ruberoid-Medium.ttf') format('truetype');
+     font-weight: 500;
+     font-style: normal;
+ }
+
+@font-face {
      font-family: 'Proxima Nova';
-     src: url('../../app/fonts/Proxima Nova/');
+     src: url('../../app/fonts/ProximaNova/ProximaNova-Regular.eot');
      src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
-         url('../../app/fonts/Proxima Nova/?#iefix') format('embedded-opentype'),
-         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.woff2') format('woff2'),
-         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.woff') format('woff'),
-         url('../../app/fonts/Proxima Nova/ProximaNova-Regular.ttf') format('truetype');
+         url('../../app/fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../../app/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
+         url('../../app/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
+         url('../../app/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
      font-weight: normal;
      font-style: normal;
 }
@@ -30,6 +42,34 @@
 .container{
      width: 1440px;
      margin: 0 auto;
+     &-right{
+          margin-left: calc((100% - 1440px) / 2);
+     }
+}
+
+section{
+     padding-top: 100px;
+}
+
+.section{
+     &__title{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          &-line{
+               @include flex();
+               gap: 40px;
+               span{
+                    width: 100%;
+                    height: 2px;
+                    background: $green;
+               }
+          }
+          h2{
+               @include text(50px, 64px, $ruberoidMedium, $darkenGray);
+          }
+     }
 }
 
 .nav{
@@ -85,10 +125,10 @@ header{
      &__title{
           margin-bottom: 36px;
           h2{
-               @include text(72px, 84px, $ruberoid, $darkenGray);
+               @include text(72px, 84px, $ruberoidMedium, $darkenGray);
           }
           h1{
-               @include text(75px, 84px, $ruberoid, $green);
+               @include text(75px, 84px, $ruberoidMedium, $green);
                text-transform: uppercase;
           }
           &-line{
@@ -153,5 +193,100 @@ header{
           top: 0;
           right: 0;
           z-index: 1;
+     }
+}
+
+.services{
+     @include flex();
+     &__part{
+          &:first-child{
+               width: 30%;
+          }
+          &:last-child{
+               @include flex(flex-end, center);
+          }
+     }
+     &__text{
+          margin-top: 24px;
+          @include text(18px, 27px, $proxima, $textGray);
+     }
+     &__tabs{
+          &-body{
+               background: $bgGreen;
+               @include flex(flex-end, center);
+               border-radius: 65px 0 0 65px;
+               &-list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    padding: 120px 40px;
+               }
+               &-item{
+                    @include flex(flex-start, flex-start);
+                    width: 360px;
+                    gap: 15px;
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                         margin-bottom: 14px;
+                    }
+                    &-dot{
+                         width: 34px;
+                         height: 34px;
+                         background: white;
+                         border-radius: 10px;
+                         @include flex(center, center);
+                         flex-shrink: 0;
+                    }
+                    p{
+                         @include text(20px, 30px, $proxima, $darkenGray);
+                    }
+               }
+               &-images{
+                    height: 680px;
+                    img{
+                         height: 100%;
+                         filter: drop-shadow(-4px 0px 8px rgba(15, 44, 15, 0.35));
+                         border-radius: 65px 0 0 65px;
+                    }
+               }
+          }
+          &-buttons{
+               border-radius: 45px 0px 0px 45px;
+               padding: 10px 0 10px 10px;
+               background: $bgGreen;
+               .active{
+                    background: $lightGreen;
+                    color: white !important;
+                    box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
+               }
+          }
+          &-btn{
+               padding: 25px 16px;
+               background: white;
+               color: $darkenGreen;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               gap: 15px;
+               transition: 0.3s ease;
+               i{
+                    font-size: 32px;
+               }
+               p{
+                    writing-mode: vertical-rl;
+                    transform: rotate(180deg);
+                    @include text(14px, 17px, $proxima, inherit);
+               }
+               &:first-child{
+                    border-radius: 40px 0 0 0;
+               }
+               &:last-child{
+                    border-radius: 0 0 0 40px;
+               }
+               &:hover{
+                    cursor: pointer;
+                    box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
+               }
+          }
      }
 }
