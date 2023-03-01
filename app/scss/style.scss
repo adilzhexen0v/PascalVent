@@ -48,7 +48,7 @@
 }
 
 section{
-     padding-top: 100px;
+     margin-top: 100px;
 }
 
 body{
@@ -403,5 +403,66 @@ header{
                     width: 100%;
                }
           }
+     }
+}
+
+.form{
+     padding: 60px 0;
+     background: $bgGreen;
+     position: relative;
+     &__block{
+          @include flex(flex-start, center);
+          gap: 40px;
+     }
+     &__title{
+          @include text(36px, 45px, $ruberoidMedium, $darkenGray);
+          margin-bottom: 28px;
+     }
+     &__input{
+          width: 300px;
+          padding: 20px;
+          background: white;
+          box-shadow: 0px 0px 12px rgba(73, 93, 76, 0.15);
+          border-radius: 15px;
+          @include text(15px, 18px, $proxima, $darkenGreen);
+          &::placeholder{
+               @include text(15px, 18px, $proxima, rgba($darkenGreen, 0.7));
+          }
+          &-block{
+               position: relative;
+               p{
+                    display: none;
+                    position: absolute;
+                    top: 65px;
+                    left: 20px;
+                    @include text(13px, 16px, $proxima, $red);
+               }
+          }
+     }
+     &__submit{
+          padding: 18px 50px;
+          border-radius: 24px;
+          background: $btnGreen;
+          box-shadow: inset 2px -2px 12px rgba(34, 111, 33, 0.36);
+          border-radius: 17px;
+          @include text(16px, 21px, $ruberoid, white);
+          text-transform: uppercase;
+          transition: 0.3s ease;
+          &-outer{
+               margin-left: 20px;
+               @include flex(center, center);
+               background: rgba($green, 0.25);
+               padding: 10px;
+               border-radius: 25px;
+          }
+          &:hover{
+               background: $hoverGreen;
+          }
+     }
+     &__bg-image{
+          position: absolute;
+          right: 12px;
+          top: 5%;
+          height: 90%;
      }
 }
