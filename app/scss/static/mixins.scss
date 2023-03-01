@@ -1,6 +1,6 @@
 @import 'variables';
 
-@mixin text($size: 20px, $lineHeight: 35px, $family: $ruberoid, $color: $black) {
+@mixin text($size: 20px, $lineHeight: 35px, $family: $ruberoid, $color: black) {
      font-size: $size;
      line-height: $lineHeight;
      font-family: $family;
