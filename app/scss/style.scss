@@ -55,6 +55,11 @@ body{
      overflow-x: hidden;
 }
 
+.title{
+     text-transform: capitalize;
+     @include text(50px, 64px, $ruberoidMedium, $darkenGray);
+}
+
 .section{
      &__title{
           width: auto;
@@ -554,4 +559,88 @@ header{
                text-align: center;
           }
      }
+}
+
+.app{
+     &__list{
+          @include flex();
+          gap: 100px;
+     }
+     &__part{
+          width: 50%;
+          .title{
+               margin-bottom: 30px;
+          }
+     }
+     &__title{
+          @include text();
+     }
+     &__buttons{
+          @include flex(flex-start, center);
+          gap: 16px;
+     }
+     &__btn{
+          height: 40px;
+          width: 70px;
+          border-radius: 20px;
+          border: 1px solid $green;
+          @include flex(center, center);
+     }
+     &__checklist{
+          margin-top: 36px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          &-item{
+               @include flex(flex-start, flex-start);
+               gap: 12px;
+
+               &-dot{
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 100%;
+                    border: 1px solid $green;
+                    @include flex(center, center);
+                    flex-shrink: 0;
+
+                    &-inner{
+                         width: 8px;
+                         height: 8px;
+                         border-radius: 100%;
+                         background: $green;
+                    }
+               }
+               &-text{
+                    @include text(17px, 20px, $proxima, $green);
+               }
+          }
+     }
+}
+
+.list {
+     display: grid; 
+     grid-template-columns: 1fr 1fr; 
+     grid-template-rows: repeat(11, 1fr); 
+     width: 570px;
+     height: 800px;
+     gap: 30px;
+     grid-template-areas: 
+     "a ."
+     "a b"
+     "a b"
+     "a b"
+     "a b"
+     "c b"
+     "c d"
+     "c d"
+     "c d"
+     "c d"
+     "c ."; 
+ }
+ .a { grid-area: a; }
+ .c { grid-area: c; }
+ .b { grid-area: b; }
+ .d { grid-area: d; }
+.item{
+     background: yellowgreen;
 }

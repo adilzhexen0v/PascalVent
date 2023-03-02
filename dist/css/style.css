@@ -36,6 +36,14 @@ body {
   overflow-x: hidden;
 }
 
+.title {
+  text-transform: capitalize;
+  font-size: 50px;
+  line-height: 64px;
+  font-family: "Ruberoid Medium";
+  color: #495E4C;
+}
+
 .section__title {
   width: auto;
   display: inline-block;
@@ -645,5 +653,103 @@ header .nav__btn-outer {
   font-family: "Proxima Nova";
   color: #78C081;
   text-align: center;
+}
+
+.app__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+}
+.app__part {
+  width: 50%;
+}
+.app__part .title {
+  margin-bottom: 30px;
+}
+.app__title {
+  font-size: 20px;
+  line-height: 35px;
+  font-family: "Ruberoid";
+  color: black;
+}
+.app__buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.app__btn {
+  height: 40px;
+  width: 70px;
+  border-radius: 20px;
+  border: 1px solid #78C081;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app__checklist {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.app__checklist-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+}
+.app__checklist-item-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: 1px solid #78C081;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.app__checklist-item-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #78C081;
+}
+.app__checklist-item-text {
+  font-size: 17px;
+  line-height: 20px;
+  font-family: "Proxima Nova";
+  color: #78C081;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(11, 1fr);
+  width: 570px;
+  height: 800px;
+  gap: 30px;
+  grid-template-areas: "a ." "a b" "a b" "a b" "a b" "c b" "c d" "c d" "c d" "c d" "c .";
+}
+
+.a {
+  grid-area: a;
+}
+
+.c {
+  grid-area: c;
+}
+
+.b {
+  grid-area: b;
+}
+
+.d {
+  grid-area: d;
+}
+
+.item {
+  background: yellowgreen;
 }
 /*# sourceMappingURL=style.css.map */
